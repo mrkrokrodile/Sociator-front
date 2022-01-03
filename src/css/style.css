@@ -1,0 +1,105 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 10px 5px 5px 2px rgb(138, 124, 137);
+    padding: 2%;
+    margin: 10%;
+    background-color: rgb(218, 218, 218);
+    width: 30%;
+    border-radius: 15px;
+    height: fit-content;
+}
+
+#main-auth {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+
+}
+#background-auth{
+   background-color:rgb(161, 147, 238) 
+}
+
+input {
+    padding: 10px;
+}
+
+.p-inputtext {
+    margin: 0.75em 0 0.75em 0;
+    width: 100%;
+}
+
+.pseudo {
+    width: 100%;
+}
+
+.buttonregister {
+   width: 40%;
+}
+
+#register-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#post {
+    display: flex;
+    justify-content: center;
+    background-color:rgb(161, 147, 238); 
+    height: 93.80vh;
+}
+
+.p-card {
+    margin: 1.5em;
+    width: 90%;
+    display: flex;
+    height: fit-content;
+}
+
+.userpost {
+    margin-left: 15px;
+}
+
+.p-card-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+img {
+    border-radius: 50%;
+}
+
+.p-avatar {
+    margin: 0.5em;
+}
+
+#profile {
+    display: flex;
+    justify-content: flex-start;
+}
+
+#mur {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:rgb(224, 215, 215);
+    width: 60vw;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+#avatarnavbar {
+    height: 48px;
+    width: 48px;
+}
