@@ -1,31 +1,20 @@
 import Carte from './card';
 import Menu from './menu';
-
-
-
-
+import Menu_navbar from './navbar';
 
 const Home = () => {
+	return (
+		<div>
+			<div>
+				{/* <Menu /> */}
+				<Menu_navbar />
+			</div>
 
-   
-    return(
-<div>
-    <div >
-    <Menu />
-    </div>       
+			<div id="post">
+				<Carte />
+			</div>
+		</div>
+	);
+};
 
-
-    <div id="post">
-        
-           <Carte /> 
-        
-    </div>    
-</div>
-
-    )
- 
-}
-
-
-
-export default Home
+export default Home;

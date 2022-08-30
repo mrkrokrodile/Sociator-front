@@ -1,7 +1,7 @@
 {
   "name": "sociator-front",
   "version": "1.0.0",
-  "description": "",
+  "description": "sociator",
   "main": "index.js",
   "scripts": {
     "start": "nodemon",
@@ -10,7 +10,7 @@
     "publish": "gh-pages -d dist"
   },
   "keywords": [],
-  "author": "",
+  "author": "moi",
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.0.1"

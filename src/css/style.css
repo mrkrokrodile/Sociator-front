@@ -8,7 +8,7 @@
 .card {
     display: flex;
     flex-direction: column;
-    box-shadow: 10px 5px 5px 2px rgb(138, 124, 137);
+    box-shadow: 10px 5px 5px 2px rgb(139, 131, 139);
     padding: 2%;
     margin: 10%;
     background-color: rgb(218, 218, 218);
@@ -20,7 +20,7 @@
 #main-auth {
     display: flex;
     justify-content: center;
-    height: 100vh;
+    height: 100Vh;
 
 }
 #background-auth{
@@ -28,12 +28,20 @@
 }
 
 input {
-    padding: 10px;
+    /* padding: 10px; */
 }
 
 .p-inputtext {
     margin: 0.75em 0 0.75em 0;
     width: 100%;
+}
+
+/* #username2 {
+    margin: 20px 0 0  0px;
+} */
+
+h5 {
+    margin: 20px 0 0  0px;
 }
 
 .pseudo {
@@ -48,33 +56,95 @@ input {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin: 20px 0 0  0px;
 }
 
 #post {
     display: flex;
     justify-content: center;
-    background-color:rgb(161, 147, 238); 
-    height: 93.80vh;
+    width: 100%;
+    height: auto; 
 }
 
-.p-card {
-    margin: 1.5em;
-    width: 90%;
+.p-card.p-component {
     display: flex;
-    height: fit-content;
+    flex-direction: column;
+    margin: 1.25em;
+    width: 75%;
+    height: auto;
+}
+
+.p-card-header {
+   
+}
+
+.p-card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.button {
+    margin: 0;
+    display: inline-flex;
+    cursor: pointer;
+    user-select: none;
+    align-items: center;
+    vertical-align: bottom;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    border: none;
+    border-radius: 6px;
+    transition: 0.2s ease-in-out;
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+}
+
+.publier_color {
+   background-color: #a193ee; 
+   transition: 0.2s ease-in-out;
+   cursor: pointer; 
+}
+
+.publier_color:hover {
+    background-color: #7f6af5;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;  
+ }
+
+.like_color {
+    background-color:rgb(100, 241, 107);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.like_color:hover {
+    background-color:rgb(39, 237, 49);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.p-card-body {
+   
+} 
+
+#menu_overlay_button {
+    display: flex;
+    flex-direction: row;
 }
 
 .userpost {
     margin-left: 15px;
 }
-
-.p-card-footer {
-    display: flex;
-    justify-content: space-between;
+#img_profile {
+    border-radius: 50%;
 }
 
-img {
-    border-radius: 50%;
+.logo_menu{
+    width: 30px;
+    height: 30px;
 }
 
 .p-avatar {
@@ -90,16 +160,183 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color:rgb(224, 215, 215);
-    width: 60vw;
+    background-color:rgb(161, 147, 238);
+    width: 75%;
+    height: auto;
+    margin-top: 4%;
 }
 
-#navbar {
+
+/*----------------------------------------- OVERLAY -------------------------------------------- */
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    box-sizing:border-box;
+    overflow: hidden;
+  }
+
+
+#overlay_comment {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    box-sizing:border-box;
+    overflow: hidden;
+  }
+
+
+  .commenter {
+    position: absolute;
+    display: flex;
+    top: 25%;
+    left: 35%;
+    color: rgb(255, 255, 255);
+    z-index: 1;
+    border-width: 100px;
+    border-color: black;
+    background-color: white;
+    width: 500px;
+    height: 500px;
+    border-radius: 15px;
+    flex-direction: column;
+    padding: 25px;
+  }
+
+  #textOverlay{
+    font-size: 15px;
+    color: rgb(0, 0, 0);
+    width: 450px;
+    height: 335px;
+    resize:none;
+    margin-top: 10px;
+  }
+
+  #close_btn {
+      cursor: pointer;
+      background-color:white;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      border-style: none;
+  }
+
+  #img_close_btn {
+      width: 50px;
+      height: 50px;
+  }
+
+  #publier_btn {
+    margin: 20px 20px 10px 20px;
+    border:none;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  #container_omment {
+     display: flex;
+     justify-content: center;
+  }
+
+  /* -------------------------- OVERLAY END --------------------------------------*/
+
+
+#menu_navbar {
+    display: flex;
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+
+#menu {
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    position: fixed;
+    width: 100%;
+    background-color:white;
+    height: 7%;
+    z-index: 1;
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 40px;
+    font-size: large;
+    background-color:rgb(224, 224, 224);
+    border-radius: 5px;
+    margin: 5px;
+    border:1px solid rgb(184, 184, 184);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+li:hover {
+    transition: 0.2s ease-in-out;
+    background-color:rgb(255, 255, 255);
+}
+
+#menu_button {
+    margin: 5px;
+    width: 100px;
+    background-color:rgb(159, 159, 248);
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(142, 142, 248);
+    box-shadow: inset 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+    transition:0.2s ease-in-out;
+    cursor: pointer;
+}
+
+#menu_button:hover {
+    background-color:rgb(102, 102, 241);
+    border: 1px solid rgb(126, 126, 251);
+    transition:0.2s ease-in-out;
+}
+
+#deconnexion{
+    margin: 5px;
+    width: 100px;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: inset 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+    transition:0.2s ease-in-out;
+    background-color:rgb(231, 85, 85);
+    border: 1px solid rgb(243, 45, 45);
+    cursor: pointer;
+}
+
+#deconnexion:hover{
+    transition:0.2s ease-in-out;
+    background-color:rgb(241, 18, 18);
+    border: 1px solid rgb(175, 22, 22);
 }
 
 #avatarnavbar {
     height: 48px;
     width: 48px;
 }
+
+@media screen and (max-width: 800px) {
+   
+    }
