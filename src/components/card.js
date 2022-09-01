@@ -8,12 +8,14 @@ import close from '../img/close.png';
 import { BsHeart } from 'react-icons/bs';
 import { Avatar } from 'primereact/avatar';
 import { Accordion, AccordionTab } from 'primereact/accordion';
+import { useNavigate } from 'react-router-dom';
 
 const Carte = () => {
 	const [currentPost, setCurrentPost] = React.useState([]);
 	const [post, setPost] = React.useState([]);
 	const [message, setMessage] = React.useState('');
 	const [text, setText] = React.useState('');
+	const navigate = useNavigate();
 	// const [userPseudo, setUserPseudo] = React.useState("");
 
 	React.useEffect(() => {
@@ -53,8 +55,9 @@ const Carte = () => {
 
 		fetch(`http://localhost:5000/post/comment-post/` + currentPost, request)
 			.then((response) => response.json())
-			// .then((content) => setPost([content, ...post]))
+			.then(window.location.reload())
 			.catch((err) => console.error(err));
+		  
 	};
 
 	const [activeIndex, setActiveIndex] = useState(null);
@@ -86,26 +89,6 @@ const Carte = () => {
 		/>
 	);
 
-	const footer = (
-		<div id="menu_overlay_button">
-			<button
-				className="button publier_color"
-				onClick={() => onComment(p._id)}
-				label="Commenter"
-				icon="pi pi-comments"
-			>
-				Commenter
-			</button>
-			<button
-				className="button like_color"
-				label="Like"
-				icon="pi pi-heart"
-			>
-				<img src={<BsHeart />} />
-				Liker !
-			</button>
-		</div>
-	);
 
 	const onComment = (idpost) => {
 		document.getElementById('overlay_comment').style.display = 'block';
@@ -142,7 +125,7 @@ const Carte = () => {
 						></textarea>
 					</div>
 					<button
-						onClick={() => publishComment()}
+						onClick={() => publishComment()}           
 						className="publier_color button"
 					>
 						Publier !
@@ -156,7 +139,26 @@ const Carte = () => {
 					title={p.posterId.pseudo}
 					subTitle={new Date(p.createdAt).toLocaleDateString('fr-FR')}
 					header={header}
-					footer={footer}
+					footer={
+						<div id="menu_overlay_button">
+							<button
+								className="button publier_color"
+								onClick={() => onComment(p._id)}
+								label="Commenter"
+								icon="pi pi-comments"
+							>
+								Commenter
+							</button>
+							<button
+								className="button like_color"
+								label="Like"
+								icon="pi pi-heart"
+							>
+								<img src={<BsHeart />} />
+								Liker !
+							</button>
+						</div>
+					}
 				>
 					<p
 						className="p-m-0"

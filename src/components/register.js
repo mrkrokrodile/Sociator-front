@@ -29,6 +29,7 @@ const Register = () => {
 				}
 			})
 			.catch((err) => console.error(err));
+			window.alert("password doesn't match")
 	};
 
 	return (
@@ -89,7 +90,7 @@ const Register = () => {
 							label="Validate"
 						/>
 						<Button
-							type="submit"
+							type="button"
 							onClick={() => navigate('/')}
 							className="buttonregister p-button-danger"
 							label="Cancel"

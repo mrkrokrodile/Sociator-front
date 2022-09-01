@@ -18,14 +18,15 @@ const Login = () => {
 			credentials: 'include',
 			body: JSON.stringify({ email, password }),
 		})
-			.then((response) => response.json())
-			.then((content) => {
-				if (content) {
+			.then((response) => {
+				console.log(response)
+				if (response.ok) {
 					navigate('/home');
 				} else {
-					return err;
-				}
+				   window.alert("wrong password or email")
+				}	
 			})
+			
 			.catch((err) => console.error(err));
 	};
 
@@ -65,7 +66,7 @@ const Login = () => {
 							label="Login"
 						/>
 						<Button
-							type="submit"
+							type="button"
 							onClick={() => navigate('/register')}
 							className="buttonregister p-button-success"
 							label="Register"

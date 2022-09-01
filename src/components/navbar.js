@@ -26,7 +26,8 @@ const Menu_navbar = () => {
 		fetch('http://localhost:5000/post', request)
 			.then((response) => response.json())
 			.then((content) => setPost([content, ...post]))
-			.catch((err) => console.error(err));
+            .then(window.location.reload())
+			.catch((err) => console.error(err))
 	};
 
 	const on = () => {
@@ -78,30 +79,30 @@ const Menu_navbar = () => {
 				</div>
 			</div>
 
-			<div id="menu">
-				<ul id="menu_navbar">
-					<li>
+			<div id="menu" className='responsive'>
+				<div id="menu_navbar">
+					<a className='sous_menu'>
 						<img
 							className="logo_menu"
 							src={home}
 						/>
 						Home
-					</li>
-					<li>
+					</a>
+					<a className='sous_menu'>
 						<img
 							className="logo_menu"
 							src={friend}
 						/>
 						Followers
-					</li>
-					<li>
+					</a>
+					<a className='sous_menu'>
 						<img
 							className="logo_menu"
 							src={settings}
 						/>
 						Settings
-					</li>
-				</ul>
+					</a>
+				</div>
 
 				<div id="profile">
 					<button

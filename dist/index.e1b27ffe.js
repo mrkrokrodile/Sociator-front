@@ -24525,7 +24525,7 @@ const Home = ()=>{
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
         __source: {
             fileName: "src/components/home.js",
-            lineNumber: 7,
+            lineNumber: 8,
             columnNumber: 3
         },
         __self: undefined,
@@ -24533,14 +24533,14 @@ const Home = ()=>{
             /*#__PURE__*/ _jsxRuntime.jsx("div", {
                 __source: {
                     fileName: "src/components/home.js",
-                    lineNumber: 8,
+                    lineNumber: 9,
                     columnNumber: 4
                 },
                 __self: undefined,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default, {
                     __source: {
                         fileName: "src/components/home.js",
-                        lineNumber: 10,
+                        lineNumber: 11,
                         columnNumber: 5
                     },
                     __self: undefined
@@ -24550,14 +24550,14 @@ const Home = ()=>{
                 id: "post",
                 __source: {
                     fileName: "src/components/home.js",
-                    lineNumber: 13,
+                    lineNumber: 14,
                     columnNumber: 4
                 },
                 __self: undefined,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default, {
                     __source: {
                         fileName: "src/components/home.js",
-                        lineNumber: 14,
+                        lineNumber: 15,
                         columnNumber: 5
                     },
                     __self: undefined
@@ -24599,6 +24599,7 @@ var _closePngDefault = parcelHelpers.interopDefault(_closePng);
 var _bs = require("react-icons/bs");
 var _avatar = require("primereact/avatar");
 var _accordion = require("primereact/accordion");
+var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 _apiDefault.default.ripple = true;
 const Carte = ()=>{
@@ -24607,6 +24608,7 @@ const Carte = ()=>{
     const [post, setPost] = _reactDefault.default.useState([]);
     const [message, setMessage] = _reactDefault.default.useState('');
     const [text, setText] = _reactDefault.default.useState('');
+    const navigate = _reactRouterDom.useNavigate();
     // const [userPseudo, setUserPseudo] = React.useState("");
     _reactDefault.default.useEffect(()=>{
         fetch('http://localhost:5000/post', {
@@ -24641,8 +24643,7 @@ const Carte = ()=>{
         };
         console.log('req', request);
         fetch(`http://localhost:5000/post/comment-post/` + currentPost, request).then((response)=>response.json()
-        )// .then((content) => setPost([content, ...post]))
-        .catch((err)=>console.error(err)
+        ).then(window.location.reload()).catch((err)=>console.error(err)
         );
     };
     const [activeIndex, setActiveIndex] = _react.useState(null);
@@ -24665,59 +24666,10 @@ const Carte = ()=>{
         ,
         __source: {
             fileName: "src/components/card.js",
-            lineNumber: 79,
+            lineNumber: 82,
             columnNumber: 3
         },
         __self: undefined
-    });
-    const footer = /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-        id: "menu_overlay_button",
-        __source: {
-            fileName: "src/components/card.js",
-            lineNumber: 90,
-            columnNumber: 3
-        },
-        __self: undefined,
-        children: [
-            /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                className: "button publier_color",
-                onClick: ()=>onComment(p._id)
-                ,
-                label: "Commenter",
-                icon: "pi pi-comments",
-                __source: {
-                    fileName: "src/components/card.js",
-                    lineNumber: 91,
-                    columnNumber: 4
-                },
-                __self: undefined,
-                children: "Commenter"
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsxs("button", {
-                className: "button like_color",
-                label: "Like",
-                icon: "pi pi-heart",
-                __source: {
-                    fileName: "src/components/card.js",
-                    lineNumber: 99,
-                    columnNumber: 4
-                },
-                __self: undefined,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                        src: /*#__PURE__*/ _jsxRuntime.jsx(_bs.BsHeart, {
-                        }),
-                        __source: {
-                            fileName: "src/components/card.js",
-                            lineNumber: 104,
-                            columnNumber: 5
-                        },
-                        __self: undefined
-                    }),
-                    "Liker !"
-                ]
-            })
-        ]
     });
     const onComment = (idpost)=>{
         document.getElementById('overlay_comment').style.display = 'block';
@@ -24732,7 +24684,7 @@ const Carte = ()=>{
         id: "mur",
         __source: {
             fileName: "src/components/card.js",
-            lineNumber: 122,
+            lineNumber: 105,
             columnNumber: 3
         },
         __self: undefined,
@@ -24741,7 +24693,7 @@ const Carte = ()=>{
                 id: "overlay_comment",
                 __source: {
                     fileName: "src/components/card.js",
-                    lineNumber: 123,
+                    lineNumber: 106,
                     columnNumber: 4
                 },
                 __self: undefined,
@@ -24749,7 +24701,7 @@ const Carte = ()=>{
                     className: "commenter",
                     __source: {
                         fileName: "src/components/card.js",
-                        lineNumber: 124,
+                        lineNumber: 107,
                         columnNumber: 5
                     },
                     __self: undefined,
@@ -24761,7 +24713,7 @@ const Carte = ()=>{
                             ,
                             __source: {
                                 fileName: "src/components/card.js",
-                                lineNumber: 125,
+                                lineNumber: 108,
                                 columnNumber: 6
                             },
                             __self: undefined,
@@ -24770,7 +24722,7 @@ const Carte = ()=>{
                                 src: _closePngDefault.default,
                                 __source: {
                                     fileName: "src/components/card.js",
-                                    lineNumber: 130,
+                                    lineNumber: 113,
                                     columnNumber: 7
                                 },
                                 __self: undefined
@@ -24780,7 +24732,7 @@ const Carte = ()=>{
                             id: "container_comment",
                             __source: {
                                 fileName: "src/components/card.js",
-                                lineNumber: 136,
+                                lineNumber: 119,
                                 columnNumber: 6
                             },
                             __self: undefined,
@@ -24792,7 +24744,7 @@ const Carte = ()=>{
                                 id: "textOverlay",
                                 __source: {
                                     fileName: "src/components/card.js",
-                                    lineNumber: 137,
+                                    lineNumber: 120,
                                     columnNumber: 7
                                 },
                                 __self: undefined
@@ -24804,7 +24756,7 @@ const Carte = ()=>{
                             className: "publier_color button",
                             __source: {
                                 fileName: "src/components/card.js",
-                                lineNumber: 144,
+                                lineNumber: 127,
                                 columnNumber: 6
                             },
                             __self: undefined,
@@ -24817,10 +24769,34 @@ const Carte = ()=>{
                     title: p.posterId.pseudo,
                     subTitle: new Date(p.createdAt).toLocaleDateString('fr-FR'),
                     header: header,
-                    footer: footer,
+                    footer: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                        id: "menu_overlay_button",
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                                className: "button publier_color",
+                                onClick: ()=>onComment(p._id)
+                                ,
+                                label: "Commenter",
+                                icon: "pi pi-comments",
+                                children: "Commenter"
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsxs("button", {
+                                className: "button like_color",
+                                label: "Like",
+                                icon: "pi pi-heart",
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                        src: /*#__PURE__*/ _jsxRuntime.jsx(_bs.BsHeart, {
+                                        })
+                                    }),
+                                    "Liker !"
+                                ]
+                            })
+                        ]
+                    }),
                     __source: {
                         fileName: "src/components/card.js",
-                        lineNumber: 154,
+                        lineNumber: 137,
                         columnNumber: 5
                     },
                     __self: undefined,
@@ -24832,7 +24808,7 @@ const Carte = ()=>{
                             },
                             __source: {
                                 fileName: "src/components/card.js",
-                                lineNumber: 161,
+                                lineNumber: 163,
                                 columnNumber: 6
                             },
                             __self: undefined,
@@ -24841,14 +24817,14 @@ const Carte = ()=>{
                         /*#__PURE__*/ _jsxRuntime.jsx("span", {
                             __source: {
                                 fileName: "src/components/card.js",
-                                lineNumber: 168,
+                                lineNumber: 170,
                                 columnNumber: 6
                             },
                             __self: undefined,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_accordion.Accordion, {
                                 __source: {
                                     fileName: "src/components/card.js",
-                                    lineNumber: 169,
+                                    lineNumber: 171,
                                     columnNumber: 7
                                 },
                                 __self: undefined,
@@ -24856,7 +24832,7 @@ const Carte = ()=>{
                                     header: "Commentaires",
                                     __source: {
                                         fileName: "src/components/card.js",
-                                        lineNumber: 170,
+                                        lineNumber: 172,
                                         columnNumber: 8
                                     },
                                     __self: undefined,
@@ -24864,7 +24840,7 @@ const Carte = ()=>{
                                             activeindex: 0,
                                             __source: {
                                                 fileName: "src/components/card.js",
-                                                lineNumber: 172,
+                                                lineNumber: 174,
                                                 columnNumber: 10
                                             },
                                             __self: undefined,
@@ -24872,7 +24848,7 @@ const Carte = ()=>{
                                                 /*#__PURE__*/ _jsxRuntime.jsx("h5", {
                                                     __source: {
                                                         fileName: "src/components/card.js",
-                                                        lineNumber: 177,
+                                                        lineNumber: 179,
                                                         columnNumber: 11
                                                     },
                                                     __self: undefined,
@@ -24881,7 +24857,7 @@ const Carte = ()=>{
                                                 /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                                     __source: {
                                                         fileName: "src/components/card.js",
-                                                        lineNumber: 178,
+                                                        lineNumber: 180,
                                                         columnNumber: 11
                                                     },
                                                     __self: undefined,
@@ -24890,7 +24866,7 @@ const Carte = ()=>{
                                                 /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                                     __source: {
                                                         fileName: "src/components/card.js",
-                                                        lineNumber: 179,
+                                                        lineNumber: 181,
                                                         columnNumber: 11
                                                     },
                                                     __self: undefined,
@@ -24908,7 +24884,11 @@ const Carte = ()=>{
         ]
     }));
 };
-_s(Carte, "N95XRrvX5+gOb0Ck8adg17RCrwo=");
+_s(Carte, "ZozeBk/tG9tBPNImoOxiI4WTaDI=", false, function() {
+    return [
+        _reactRouterDom.useNavigate
+    ];
+});
 _c = Carte;
 exports.default = Carte;
 var _c;
@@ -24919,7 +24899,7 @@ $RefreshReg$(_c, "Carte");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6Ds2u","primereact/card":"7by0z","primereact/api":"7gTC6","primereact/button":"4T6aD","react":"4mchR","../img/close.png":"hzCxT","primereact/avatar":"iyoht","primereact/accordion":"9IKtU","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","react-icons/bs":"bGq2l","../img/profil_logo.png":"65udb"}],"7by0z":[function(require,module,exports) {
+},{"react/jsx-runtime":"6Ds2u","primereact/card":"7by0z","primereact/api":"7gTC6","primereact/button":"4T6aD","react":"4mchR","../img/close.png":"hzCxT","primereact/avatar":"iyoht","primereact/accordion":"9IKtU","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"9pz13","react-icons/bs":"bGq2l","../img/profil_logo.png":"65udb","react-router-dom":"16kZP"}],"7by0z":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Card", ()=>Card1
@@ -72159,7 +72139,7 @@ const Menu_navbar = ()=>{
                 content,
                 ...post
             ])
-        ).catch((err)=>console.error(err)
+        ).then(window.location.reload()).catch((err)=>console.error(err)
         );
     };
     const on = ()=>{
@@ -72180,7 +72160,7 @@ const Menu_navbar = ()=>{
         id: "navbar",
         __source: {
             fileName: "src/components/navbar.js",
-            lineNumber: 50,
+            lineNumber: 51,
             columnNumber: 3
         },
         __self: undefined,
@@ -72189,7 +72169,7 @@ const Menu_navbar = ()=>{
                 id: "overlay",
                 __source: {
                     fileName: "src/components/navbar.js",
-                    lineNumber: 51,
+                    lineNumber: 52,
                     columnNumber: 4
                 },
                 __self: undefined,
@@ -72197,7 +72177,7 @@ const Menu_navbar = ()=>{
                     className: "commenter",
                     __source: {
                         fileName: "src/components/navbar.js",
-                        lineNumber: 52,
+                        lineNumber: 53,
                         columnNumber: 5
                     },
                     __self: undefined,
@@ -72209,7 +72189,7 @@ const Menu_navbar = ()=>{
                             ,
                             __source: {
                                 fileName: "src/components/navbar.js",
-                                lineNumber: 53,
+                                lineNumber: 54,
                                 columnNumber: 6
                             },
                             __self: undefined,
@@ -72218,7 +72198,7 @@ const Menu_navbar = ()=>{
                                 src: _closePngDefault.default,
                                 __source: {
                                     fileName: "src/components/navbar.js",
-                                    lineNumber: 58,
+                                    lineNumber: 59,
                                     columnNumber: 7
                                 },
                                 __self: undefined
@@ -72228,7 +72208,7 @@ const Menu_navbar = ()=>{
                             id: "container_omment",
                             __source: {
                                 fileName: "src/components/navbar.js",
-                                lineNumber: 64,
+                                lineNumber: 65,
                                 columnNumber: 6
                             },
                             __self: undefined,
@@ -72240,7 +72220,7 @@ const Menu_navbar = ()=>{
                                 id: "textOverlay",
                                 __source: {
                                     fileName: "src/components/navbar.js",
-                                    lineNumber: 65,
+                                    lineNumber: 66,
                                     columnNumber: 7
                                 },
                                 __self: undefined
@@ -72252,7 +72232,7 @@ const Menu_navbar = ()=>{
                             className: "button publier_color",
                             __source: {
                                 fileName: "src/components/navbar.js",
-                                lineNumber: 72,
+                                lineNumber: 73,
                                 columnNumber: 6
                             },
                             __self: undefined,
@@ -72263,26 +72243,28 @@ const Menu_navbar = ()=>{
             }),
             /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                 id: "menu",
+                className: "responsive",
                 __source: {
                     fileName: "src/components/navbar.js",
-                    lineNumber: 81,
+                    lineNumber: 82,
                     columnNumber: 4
                 },
                 __self: undefined,
                 children: [
-                    /*#__PURE__*/ _jsxRuntime.jsxs("ul", {
+                    /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                         id: "menu_navbar",
                         __source: {
                             fileName: "src/components/navbar.js",
-                            lineNumber: 82,
+                            lineNumber: 83,
                             columnNumber: 5
                         },
                         __self: undefined,
                         children: [
-                            /*#__PURE__*/ _jsxRuntime.jsxs("li", {
+                            /*#__PURE__*/ _jsxRuntime.jsxs("a", {
+                                className: "sous_menu",
                                 __source: {
                                     fileName: "src/components/navbar.js",
-                                    lineNumber: 83,
+                                    lineNumber: 84,
                                     columnNumber: 6
                                 },
                                 __self: undefined,
@@ -72292,7 +72274,7 @@ const Menu_navbar = ()=>{
                                         src: _homePngDefault.default,
                                         __source: {
                                             fileName: "src/components/navbar.js",
-                                            lineNumber: 84,
+                                            lineNumber: 85,
                                             columnNumber: 7
                                         },
                                         __self: undefined
@@ -72300,10 +72282,11 @@ const Menu_navbar = ()=>{
                                     "Home"
                                 ]
                             }),
-                            /*#__PURE__*/ _jsxRuntime.jsxs("li", {
+                            /*#__PURE__*/ _jsxRuntime.jsxs("a", {
+                                className: "sous_menu",
                                 __source: {
                                     fileName: "src/components/navbar.js",
-                                    lineNumber: 90,
+                                    lineNumber: 91,
                                     columnNumber: 6
                                 },
                                 __self: undefined,
@@ -72313,7 +72296,7 @@ const Menu_navbar = ()=>{
                                         src: _friendPngDefault.default,
                                         __source: {
                                             fileName: "src/components/navbar.js",
-                                            lineNumber: 91,
+                                            lineNumber: 92,
                                             columnNumber: 7
                                         },
                                         __self: undefined
@@ -72321,10 +72304,11 @@ const Menu_navbar = ()=>{
                                     "Followers"
                                 ]
                             }),
-                            /*#__PURE__*/ _jsxRuntime.jsxs("li", {
+                            /*#__PURE__*/ _jsxRuntime.jsxs("a", {
+                                className: "sous_menu",
                                 __source: {
                                     fileName: "src/components/navbar.js",
-                                    lineNumber: 97,
+                                    lineNumber: 98,
                                     columnNumber: 6
                                 },
                                 __self: undefined,
@@ -72334,7 +72318,7 @@ const Menu_navbar = ()=>{
                                         src: _settingsPngDefault.default,
                                         __source: {
                                             fileName: "src/components/navbar.js",
-                                            lineNumber: 98,
+                                            lineNumber: 99,
                                             columnNumber: 7
                                         },
                                         __self: undefined
@@ -72348,7 +72332,7 @@ const Menu_navbar = ()=>{
                         id: "profile",
                         __source: {
                             fileName: "src/components/navbar.js",
-                            lineNumber: 106,
+                            lineNumber: 107,
                             columnNumber: 5
                         },
                         __self: undefined,
@@ -72359,7 +72343,7 @@ const Menu_navbar = ()=>{
                                 id: "menu_button",
                                 __source: {
                                     fileName: "src/components/navbar.js",
-                                    lineNumber: 107,
+                                    lineNumber: 108,
                                     columnNumber: 6
                                 },
                                 __self: undefined,
@@ -72371,7 +72355,7 @@ const Menu_navbar = ()=>{
                                 id: "deconnexion",
                                 __source: {
                                     fileName: "src/components/navbar.js",
-                                    lineNumber: 114,
+                                    lineNumber: 115,
                                     columnNumber: 6
                                 },
                                 __self: undefined,
@@ -72453,12 +72437,13 @@ const Register = ()=>{
             else return err;
         }).catch((err)=>console.error(err)
         );
+        window.alert("password doesn't match");
     };
     return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
         id: "background-auth",
         __source: {
             fileName: "src/components/register.js",
-            lineNumber: 35,
+            lineNumber: 36,
             columnNumber: 3
         },
         __self: undefined,
@@ -72466,7 +72451,7 @@ const Register = ()=>{
             id: "main-auth",
             __source: {
                 fileName: "src/components/register.js",
-                lineNumber: 36,
+                lineNumber: 37,
                 columnNumber: 4
             },
             __self: undefined,
@@ -72475,7 +72460,7 @@ const Register = ()=>{
                 className: "card",
                 __source: {
                     fileName: "src/components/register.js",
-                    lineNumber: 37,
+                    lineNumber: 38,
                     columnNumber: 5
                 },
                 __self: undefined,
@@ -72483,7 +72468,7 @@ const Register = ()=>{
                     /*#__PURE__*/ _jsxRuntime.jsx("h5", {
                         __source: {
                             fileName: "src/components/register.js",
-                            lineNumber: 41,
+                            lineNumber: 42,
                             columnNumber: 6
                         },
                         __self: undefined,
@@ -72493,7 +72478,7 @@ const Register = ()=>{
                         className: "p-field",
                         __source: {
                             fileName: "src/components/register.js",
-                            lineNumber: 42,
+                            lineNumber: 43,
                             columnNumber: 6
                         },
                         __self: undefined,
@@ -72503,7 +72488,7 @@ const Register = ()=>{
                                 className: "p-d-block",
                                 __source: {
                                     fileName: "src/components/register.js",
-                                    lineNumber: 43,
+                                    lineNumber: 44,
                                     columnNumber: 7
                                 },
                                 __self: undefined
@@ -72516,7 +72501,7 @@ const Register = ()=>{
                                 className: "p-d-block pseudo",
                                 __source: {
                                     fileName: "src/components/register.js",
-                                    lineNumber: 47,
+                                    lineNumber: 48,
                                     columnNumber: 7
                                 },
                                 __self: undefined
@@ -72526,7 +72511,7 @@ const Register = ()=>{
                     /*#__PURE__*/ _jsxRuntime.jsx("h5", {
                         __source: {
                             fileName: "src/components/register.js",
-                            lineNumber: 56,
+                            lineNumber: 57,
                             columnNumber: 6
                         },
                         __self: undefined,
@@ -72536,7 +72521,7 @@ const Register = ()=>{
                         className: "p-field",
                         __source: {
                             fileName: "src/components/register.js",
-                            lineNumber: 57,
+                            lineNumber: 58,
                             columnNumber: 6
                         },
                         __self: undefined,
@@ -72546,7 +72531,7 @@ const Register = ()=>{
                                 className: "p-d-block",
                                 __source: {
                                     fileName: "src/components/register.js",
-                                    lineNumber: 58,
+                                    lineNumber: 59,
                                     columnNumber: 7
                                 },
                                 __self: undefined
@@ -72559,7 +72544,7 @@ const Register = ()=>{
                                 className: "p-d-block pseudo",
                                 __source: {
                                     fileName: "src/components/register.js",
-                                    lineNumber: 62,
+                                    lineNumber: 63,
                                     columnNumber: 7
                                 },
                                 __self: undefined
@@ -72569,7 +72554,7 @@ const Register = ()=>{
                     /*#__PURE__*/ _jsxRuntime.jsx("h5", {
                         __source: {
                             fileName: "src/components/register.js",
-                            lineNumber: 71,
+                            lineNumber: 72,
                             columnNumber: 6
                         },
                         __self: undefined,
@@ -72582,7 +72567,7 @@ const Register = ()=>{
                         toggleMask: true,
                         __source: {
                             fileName: "src/components/register.js",
-                            lineNumber: 72,
+                            lineNumber: 73,
                             columnNumber: 6
                         },
                         __self: undefined
@@ -72590,7 +72575,7 @@ const Register = ()=>{
                     /*#__PURE__*/ _jsxRuntime.jsx("h5", {
                         __source: {
                             fileName: "src/components/register.js",
-                            lineNumber: 78,
+                            lineNumber: 79,
                             columnNumber: 6
                         },
                         __self: undefined,
@@ -72603,7 +72588,7 @@ const Register = ()=>{
                         toggleMask: true,
                         __source: {
                             fileName: "src/components/register.js",
-                            lineNumber: 79,
+                            lineNumber: 80,
                             columnNumber: 6
                         },
                         __self: undefined
@@ -72612,7 +72597,7 @@ const Register = ()=>{
                         id: "register-footer",
                         __source: {
                             fileName: "src/components/register.js",
-                            lineNumber: 85,
+                            lineNumber: 86,
                             columnNumber: 6
                         },
                         __self: undefined,
@@ -72623,20 +72608,20 @@ const Register = ()=>{
                                 label: "Validate",
                                 __source: {
                                     fileName: "src/components/register.js",
-                                    lineNumber: 86,
+                                    lineNumber: 87,
                                     columnNumber: 7
                                 },
                                 __self: undefined
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsx(_button.Button, {
-                                type: "submit",
+                                type: "button",
                                 onClick: ()=>navigate('/')
                                 ,
                                 className: "buttonregister p-button-danger",
                                 label: "Cancel",
                                 __source: {
                                     fileName: "src/components/register.js",
-                                    lineNumber: 91,
+                                    lineNumber: 92,
                                     columnNumber: 7
                                 },
                                 __self: undefined
@@ -73875,10 +73860,10 @@ const Login = ()=>{
                 email,
                 password
             })
-        }).then((response)=>response.json()
-        ).then((content)=>{
-            if (content) navigate('/home');
-            else return err;
+        }).then((response)=>{
+            console.log(response);
+            if (response.ok) navigate('/home');
+            else window.alert("wrong password or email");
         }).catch((err)=>console.error(err)
         );
     };
@@ -73886,7 +73871,7 @@ const Login = ()=>{
         id: "background-auth",
         __source: {
             fileName: "src/components/login.js",
-            lineNumber: 33,
+            lineNumber: 34,
             columnNumber: 3
         },
         __self: undefined,
@@ -73894,7 +73879,7 @@ const Login = ()=>{
             id: "main-auth",
             __source: {
                 fileName: "src/components/login.js",
-                lineNumber: 34,
+                lineNumber: 35,
                 columnNumber: 4
             },
             __self: undefined,
@@ -73903,7 +73888,7 @@ const Login = ()=>{
                 className: "card",
                 __source: {
                     fileName: "src/components/login.js",
-                    lineNumber: 35,
+                    lineNumber: 36,
                     columnNumber: 5
                 },
                 __self: undefined,
@@ -73911,7 +73896,7 @@ const Login = ()=>{
                     /*#__PURE__*/ _jsxRuntime.jsx("h5", {
                         __source: {
                             fileName: "src/components/login.js",
-                            lineNumber: 39,
+                            lineNumber: 40,
                             columnNumber: 6
                         },
                         __self: undefined,
@@ -73921,7 +73906,7 @@ const Login = ()=>{
                         className: "p-field",
                         __source: {
                             fileName: "src/components/login.js",
-                            lineNumber: 40,
+                            lineNumber: 41,
                             columnNumber: 6
                         },
                         __self: undefined,
@@ -73931,7 +73916,7 @@ const Login = ()=>{
                                 className: "p-d-block",
                                 __source: {
                                     fileName: "src/components/login.js",
-                                    lineNumber: 41,
+                                    lineNumber: 42,
                                     columnNumber: 7
                                 },
                                 __self: undefined
@@ -73944,7 +73929,7 @@ const Login = ()=>{
                                 className: "p-d-block pseudo",
                                 __source: {
                                     fileName: "src/components/login.js",
-                                    lineNumber: 45,
+                                    lineNumber: 46,
                                     columnNumber: 7
                                 },
                                 __self: undefined
@@ -73954,7 +73939,7 @@ const Login = ()=>{
                     /*#__PURE__*/ _jsxRuntime.jsx("h5", {
                         __source: {
                             fileName: "src/components/login.js",
-                            lineNumber: 54,
+                            lineNumber: 55,
                             columnNumber: 6
                         },
                         __self: undefined,
@@ -73968,7 +73953,7 @@ const Login = ()=>{
                         toggleMask: true,
                         __source: {
                             fileName: "src/components/login.js",
-                            lineNumber: 55,
+                            lineNumber: 56,
                             columnNumber: 6
                         },
                         __self: undefined
@@ -73977,7 +73962,7 @@ const Login = ()=>{
                         id: "register-footer",
                         __source: {
                             fileName: "src/components/login.js",
-                            lineNumber: 61,
+                            lineNumber: 62,
                             columnNumber: 6
                         },
                         __self: undefined,
@@ -73988,20 +73973,20 @@ const Login = ()=>{
                                 label: "Login",
                                 __source: {
                                     fileName: "src/components/login.js",
-                                    lineNumber: 62,
+                                    lineNumber: 63,
                                     columnNumber: 7
                                 },
                                 __self: undefined
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsx(_button.Button, {
-                                type: "submit",
+                                type: "button",
                                 onClick: ()=>navigate('/register')
                                 ,
                                 className: "buttonregister p-button-success",
                                 label: "Register",
                                 __source: {
                                     fileName: "src/components/login.js",
-                                    lineNumber: 67,
+                                    lineNumber: 68,
                                     columnNumber: 7
                                 },
                                 __self: undefined

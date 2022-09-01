@@ -2,6 +2,7 @@ import Carte from './card';
 import Menu from './menu';
 import Menu_navbar from './navbar';
 
+
 const Home = () => {
 	return (
 		<div>
