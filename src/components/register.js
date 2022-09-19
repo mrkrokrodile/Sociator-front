@@ -3,7 +3,7 @@ import { Password } from 'primereact/password';
 import { Divider } from 'primereact/divider';
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
 	const [email, setEmail] = useState('');
@@ -20,16 +20,21 @@ const Register = () => {
 			credentials: 'include',
 			body: JSON.stringify({ pseudo, email, password, password2 }),
 		})
-			.then((response) => response.json())
+		.then((response) => response.json())
 			.then((content) => {
-				if (content) {
-					navigate('/');
-				} else {
-					return err;
+				console.log(content)
+				if (content.errors) {
+					window.alert(content.errors.password)
+				} else if (content.errors) {
+					window.alert(content.errors.email)
+				} else if (content.errors) {
+					window.alert(content.errors.pseudo)
+				} else if (content) {
+					navigate('/');	
 				}
+
 			})
-			.catch((err) => console.error(err));
-			window.alert("password doesn't match")
+		.catch((err) => console.error(err));
 	};
 
 	return (
@@ -82,6 +87,8 @@ const Register = () => {
 						onChange={(e) => setValue2(e.target.value)}
 						toggleMask
 					/>
+
+					<span>{}</span>
 
 					<div id="register-footer">
 						<Button

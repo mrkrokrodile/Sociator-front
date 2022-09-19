@@ -26,8 +26,8 @@ const Menu_navbar = () => {
 		fetch('http://localhost:5000/post', request)
 			.then((response) => response.json())
 			.then((content) => setPost([content, ...post]))
-            .then(window.location.reload())
 			.catch((err) => console.error(err))
+            .then(window.location.reload())
 	};
 
 	const on = () => {

@@ -141,22 +141,22 @@ const Carte = () => {
 					header={header}
 					footer={
 						<div id="menu_overlay_button">
-							<button
-								className="button publier_color"
+							<Button
+								className="p-button"
 								onClick={() => onComment(p._id)}
 								label="Commenter"
 								icon="pi pi-comments"
+								iconPos="right"
 							>
-								Commenter
-							</button>
-							<button
-								className="button like_color"
-								label="Like"
+							</Button>
+							<Button
+								className="p-button-success"
+								label="Liker !"
 								icon="pi pi-heart"
+								iconPos="right"
 							>
-								<img src={<BsHeart />} />
-								Liker !
-							</button>
+								
+							</Button>
 						</div>
 					}
 				>
@@ -178,7 +178,7 @@ const Carte = () => {
 										{/* {console.log(c)} */}
 										<h5>{c.commenterPseudo}</h5>
 										<p>{c.text}</p>
-										<p>{c.timestamp}</p>
+										<p>{new Date(c.timestamp).toLocaleDateString('fr-FR')}</p>
 									</div>
 								))}
 							</AccordionTab>

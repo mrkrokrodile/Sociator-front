@@ -19,7 +19,7 @@ const Login = () => {
 			body: JSON.stringify({ email, password }),
 		})
 			.then((response) => {
-				console.log(response)
+				// console.log(response)
 				if (response.ok) {
 					navigate('/home');
 				} else {
@@ -37,7 +37,7 @@ const Login = () => {
 					onSubmit={handleSubmit}
 					className="card"
 				>
-					<h5>Email ou Pseudo</h5>
+					<h5>Email</h5>
 					<div className="p-field">
 						<label
 							htmlFor="username2"
@@ -62,13 +62,13 @@ const Login = () => {
 					<div id="register-footer">
 						<Button
 							type="submit"
-							className="buttonregister p-button-danger"
+							className="buttonregister p-button-primary"
 							label="Login"
 						/>
 						<Button
 							type="button"
 							onClick={() => navigate('/register')}
-							className="buttonregister p-button-success"
+							className="buttonregister p-button-secondary"
 							label="Register"
 						/>
 					</div>

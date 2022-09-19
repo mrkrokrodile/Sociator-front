@@ -113,20 +113,9 @@ h5 {
     cursor: pointer;  
  }
 
-.like_color {
-    background-color:rgb(100, 241, 107);
-    transition: 0.2s ease-in-out;
-    cursor: pointer;
-}
 
-.like_color:hover {
-    background-color:rgb(39, 237, 49);
-    transition: 0.2s ease-in-out;
-    cursor: pointer;
-}
-
-.p-card-body {
-   
+.p-button {
+   margin-right: 10px!important;
 } 
 
 #menu_overlay_button {
@@ -269,19 +258,7 @@ h5 {
   } */
   
   /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-  @media screen and (max-width: 600px) {
-    #menu.responsive {position: relative;}
-    #menu.responsive a.icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    #menu.responsive a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
-  }
+ 
 
 #menu_navbar {
     display: flex;
@@ -364,7 +341,19 @@ h5 {
     width: 48px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
+
+    #menu.responsive {position: relative;}
+    #menu.responsive a.icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    #menu.responsive a {
+      float: none;
+      display: flex;
+      text-align: left;
+    }
    
     .commenter {
     position: absolute;
@@ -400,11 +389,16 @@ h5 {
     }
 
     .sous-menu text {
-        display: none;
+        display: flex;
     }
 
     .button {
         font-size: 12px;
     }
-        
+
+    .p-button-label {
+        display: none;
+        align-items: center;
+    }
+ 
     }

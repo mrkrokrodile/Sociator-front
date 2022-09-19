@@ -24870,7 +24870,7 @@ const Carte = ()=>{
                                                         columnNumber: 11
                                                     },
                                                     __self: undefined,
-                                                    children: c.timestamp
+                                                    children: new Date(c.timestamp).toLocaleDateString('fr-FR')
                                                 })
                                             ]
                                         }, index)
@@ -72139,8 +72139,8 @@ const Menu_navbar = ()=>{
                 content,
                 ...post
             ])
-        ).then(window.location.reload()).catch((err)=>console.error(err)
-        );
+        ).catch((err)=>console.error(err)
+        ).then(window.location.reload());
     };
     const on = ()=>{
         document.getElementById('overlay').style.display = 'block';
@@ -72432,18 +72432,19 @@ const Register = ()=>{
                 password2
             })
         }).then((response)=>response.json()
-        ).then((content)=>{
-            if (content) navigate('/');
-            else return err;
+        )// console.log(response)
+        .then((ok, nope)=>{
+            if (nope) return err;
+            else if (ok) navigate('/');
         }).catch((err)=>console.error(err)
         );
-        window.alert("password doesn't match");
+        window.alert("mauvais mot de passe ou email");
     };
     return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
         id: "background-auth",
         __source: {
             fileName: "src/components/register.js",
-            lineNumber: 36,
+            lineNumber: 37,
             columnNumber: 3
         },
         __self: undefined,
@@ -72451,7 +72452,7 @@ const Register = ()=>{
             id: "main-auth",
             __source: {
                 fileName: "src/components/register.js",
-                lineNumber: 37,
+                lineNumber: 38,
                 columnNumber: 4
             },
             __self: undefined,
@@ -72460,7 +72461,7 @@ const Register = ()=>{
                 className: "card",
                 __source: {
                     fileName: "src/components/register.js",
-                    lineNumber: 38,
+                    lineNumber: 39,
                     columnNumber: 5
                 },
                 __self: undefined,
@@ -72468,7 +72469,7 @@ const Register = ()=>{
                     /*#__PURE__*/ _jsxRuntime.jsx("h5", {
                         __source: {
                             fileName: "src/components/register.js",
-                            lineNumber: 42,
+                            lineNumber: 43,
                             columnNumber: 6
                         },
                         __self: undefined,
@@ -72478,7 +72479,7 @@ const Register = ()=>{
                         className: "p-field",
                         __source: {
                             fileName: "src/components/register.js",
-                            lineNumber: 43,
+                            lineNumber: 44,
                             columnNumber: 6
                         },
                         __self: undefined,
@@ -72488,7 +72489,7 @@ const Register = ()=>{
                                 className: "p-d-block",
                                 __source: {
                                     fileName: "src/components/register.js",
-                                    lineNumber: 44,
+                                    lineNumber: 45,
                                     columnNumber: 7
                                 },
                                 __self: undefined
@@ -72501,7 +72502,7 @@ const Register = ()=>{
                                 className: "p-d-block pseudo",
                                 __source: {
                                     fileName: "src/components/register.js",
-                                    lineNumber: 48,
+                                    lineNumber: 49,
                                     columnNumber: 7
                                 },
                                 __self: undefined
@@ -72511,7 +72512,7 @@ const Register = ()=>{
                     /*#__PURE__*/ _jsxRuntime.jsx("h5", {
                         __source: {
                             fileName: "src/components/register.js",
-                            lineNumber: 57,
+                            lineNumber: 58,
                             columnNumber: 6
                         },
                         __self: undefined,
@@ -72521,7 +72522,7 @@ const Register = ()=>{
                         className: "p-field",
                         __source: {
                             fileName: "src/components/register.js",
-                            lineNumber: 58,
+                            lineNumber: 59,
                             columnNumber: 6
                         },
                         __self: undefined,
@@ -72531,7 +72532,7 @@ const Register = ()=>{
                                 className: "p-d-block",
                                 __source: {
                                     fileName: "src/components/register.js",
-                                    lineNumber: 59,
+                                    lineNumber: 60,
                                     columnNumber: 7
                                 },
                                 __self: undefined
@@ -72544,7 +72545,7 @@ const Register = ()=>{
                                 className: "p-d-block pseudo",
                                 __source: {
                                     fileName: "src/components/register.js",
-                                    lineNumber: 63,
+                                    lineNumber: 64,
                                     columnNumber: 7
                                 },
                                 __self: undefined
@@ -72554,7 +72555,7 @@ const Register = ()=>{
                     /*#__PURE__*/ _jsxRuntime.jsx("h5", {
                         __source: {
                             fileName: "src/components/register.js",
-                            lineNumber: 72,
+                            lineNumber: 73,
                             columnNumber: 6
                         },
                         __self: undefined,
@@ -72567,7 +72568,7 @@ const Register = ()=>{
                         toggleMask: true,
                         __source: {
                             fileName: "src/components/register.js",
-                            lineNumber: 73,
+                            lineNumber: 74,
                             columnNumber: 6
                         },
                         __self: undefined
@@ -72575,7 +72576,7 @@ const Register = ()=>{
                     /*#__PURE__*/ _jsxRuntime.jsx("h5", {
                         __source: {
                             fileName: "src/components/register.js",
-                            lineNumber: 79,
+                            lineNumber: 80,
                             columnNumber: 6
                         },
                         __self: undefined,
@@ -72588,7 +72589,15 @@ const Register = ()=>{
                         toggleMask: true,
                         __source: {
                             fileName: "src/components/register.js",
-                            lineNumber: 80,
+                            lineNumber: 81,
+                            columnNumber: 6
+                        },
+                        __self: undefined
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                        __source: {
+                            fileName: "src/components/register.js",
+                            lineNumber: 87,
                             columnNumber: 6
                         },
                         __self: undefined
@@ -72597,7 +72606,7 @@ const Register = ()=>{
                         id: "register-footer",
                         __source: {
                             fileName: "src/components/register.js",
-                            lineNumber: 86,
+                            lineNumber: 89,
                             columnNumber: 6
                         },
                         __self: undefined,
@@ -72608,7 +72617,7 @@ const Register = ()=>{
                                 label: "Validate",
                                 __source: {
                                     fileName: "src/components/register.js",
-                                    lineNumber: 87,
+                                    lineNumber: 90,
                                     columnNumber: 7
                                 },
                                 __self: undefined
@@ -72621,7 +72630,7 @@ const Register = ()=>{
                                 label: "Cancel",
                                 __source: {
                                     fileName: "src/components/register.js",
-                                    lineNumber: 92,
+                                    lineNumber: 95,
                                     columnNumber: 7
                                 },
                                 __self: undefined
@@ -73900,7 +73909,7 @@ const Login = ()=>{
                             columnNumber: 6
                         },
                         __self: undefined,
-                        children: "Email ou Pseudo"
+                        children: "Email"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                         className: "p-field",
@@ -73969,7 +73978,7 @@ const Login = ()=>{
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsx(_button.Button, {
                                 type: "submit",
-                                className: "buttonregister p-button-danger",
+                                className: "buttonregister p-button-primary",
                                 label: "Login",
                                 __source: {
                                     fileName: "src/components/login.js",
@@ -73982,7 +73991,7 @@ const Login = ()=>{
                                 type: "button",
                                 onClick: ()=>navigate('/register')
                                 ,
-                                className: "buttonregister p-button-success",
+                                className: "buttonregister p-button-secondary",
                                 label: "Register",
                                 __source: {
                                     fileName: "src/components/login.js",
